@@ -4,6 +4,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import InteractiveAppDemo from "./InteractiveAppDemo";
 
+// Polar.sh checkout URL configuration
+// You can set NEXT_PUBLIC_POLAR_CHECKOUT_URL in .env.local or update this fallback link
+const POLAR_CHECKOUT_URL =
+  process.env.NEXT_PUBLIC_POLAR_CHECKOUT_URL || "https://buy.polar.sh/cliner";
+
 export default function Home() {
   const [activeStep, setActiveStep] = useState<number>(1);
 
@@ -36,6 +41,10 @@ export default function Home() {
     {
       q: "Is the $9 price a one-time payment or a subscription?",
       a: "It's a 100% one-time payment. You pay $9 once and get a lifetime license with all future updates included. No monthly fees, no yearly renewals, and no surprise charges."
+    },
+    {
+      q: "How does the Polar.sh checkout and delivery work?",
+      a: "Payments are processed securely via Polar.sh. Immediately after your purchase, you receive an instant download link for the macOS app and your lifetime license activation key via email."
     },
     {
       q: "What if I delete something by mistake?",
@@ -90,7 +99,9 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#pricing"
+              href={POLAR_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-2 text-sm font-semibold rounded-xl bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-md shadow-blue-600/20 active:scale-95"
             >
               Get Cliner — $9
@@ -102,7 +113,7 @@ export default function Home() {
       {/* Hero Section (Split: Content Left, Interactive App Demo Right) */}
       <section className="relative pt-12 sm:pt-20 pb-16 px-6 max-w-7xl mx-auto z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Side: Marketing Content & CTAs */}
           <div className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs sm:text-sm text-zinc-300 mb-6 backdrop-blur shadow-inner">
@@ -123,10 +134,12 @@ export default function Home() {
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <a
                 id="hero-buy-button"
-                href="#pricing"
+                href={POLAR_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base sm:text-lg flex items-center justify-center gap-3 shadow-xl shadow-blue-600/30 transition-all hover:scale-105 active:scale-95"
               >
-                <span>Buy Cliner for $9</span>
+                <span>Buy Cliner   — $9</span>
                 <span className="text-xs font-normal px-2.5 py-0.5 rounded-full bg-white/20 text-white">
                   Lifetime
                 </span>
@@ -144,21 +157,21 @@ export default function Home() {
             <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-zinc-400">
               <span className="flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 One-Time Payment ($9)
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                100% Safe (Finder Trash)
+                Secure Polar.sh Checkout
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                30-Day Money-Back
+                30-Day Guarantee
               </span>
             </div>
 
@@ -193,11 +206,10 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
             onClick={() => setActiveStep(1)}
-            className={`p-8 rounded-3xl border transition-all cursor-pointer ${
-              activeStep === 1
+            className={`p-8 rounded-3xl border transition-all cursor-pointer ${activeStep === 1
                 ? "bg-zinc-900 border-blue-500 shadow-xl shadow-blue-500/10 scale-105"
                 : "card-gradient border-zinc-800/80 hover:border-zinc-700"
-            }`}
+              }`}
           >
             <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-extrabold text-xl mb-6">
               1
@@ -210,11 +222,10 @@ export default function Home() {
 
           <div
             onClick={() => setActiveStep(2)}
-            className={`p-8 rounded-3xl border transition-all cursor-pointer ${
-              activeStep === 2
+            className={`p-8 rounded-3xl border transition-all cursor-pointer ${activeStep === 2
                 ? "bg-zinc-900 border-blue-500 shadow-xl shadow-blue-500/10 scale-105"
                 : "card-gradient border-zinc-800/80 hover:border-zinc-700"
-            }`}
+              }`}
           >
             <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-extrabold text-xl mb-6">
               2
@@ -227,11 +238,10 @@ export default function Home() {
 
           <div
             onClick={() => setActiveStep(3)}
-            className={`p-8 rounded-3xl border transition-all cursor-pointer ${
-              activeStep === 3
+            className={`p-8 rounded-3xl border transition-all cursor-pointer ${activeStep === 3
                 ? "bg-zinc-900 border-blue-500 shadow-xl shadow-blue-500/10 scale-105"
                 : "card-gradient border-zinc-800/80 hover:border-zinc-700"
-            }`}
+              }`}
           >
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-extrabold text-xl mb-6">
               3
@@ -298,7 +308,7 @@ export default function Home() {
             <div className="text-3xl mb-4">💳</div>
             <h3 className="text-lg font-bold text-white mb-2">No Recurring Subscriptions</h3>
             <p className="text-sm text-zinc-400">
-              Pay $9 once and own it for life. No $40/year renewals, no expiring licenses, and free future updates.
+              Pay $9 once   and own it for life. No $40/year renewals, no expiring licenses, and free future updates.
             </p>
           </div>
         </div>
@@ -333,7 +343,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section ($9 Offer) */}
+      {/* Pricing Section ($9 Offer with Polar Checkout) */}
       <section id="pricing" className="py-24 px-6 max-w-4xl mx-auto z-10 border-t border-zinc-800/70">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-block px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-xs uppercase tracking-wider mb-4">
@@ -390,17 +400,24 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Buy CTA */}
+            {/* Buy CTA   */}
             <a
               id="buy-now-cta"
-              href="#"
+              href={POLAR_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-blue-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
-              Get Cliner Now — $9
+              <span>Get Cliner Now — $9</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
 
-            <p className="mt-4 text-xs text-zinc-500">
-              Instant download & license key delivered via email • Secure Stripe Checkout
+            <p className="mt-4 text-xs text-zinc-500 flex items-center justify-center gap-1.5">
+              <span>🔒 Powered by</span>
+              <strong className="text-zinc-300">Polar.sh</strong>
+              <span>• Instant license delivery</span>
             </p>
           </div>
         </div>
@@ -443,10 +460,12 @@ export default function Home() {
 
         <div className="mt-8 flex justify-center">
           <a
-            href="#pricing"
+            href={POLAR_CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-9 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg shadow-xl shadow-blue-600/30 transition-all hover:scale-105 active:scale-95"
           >
-            Get Cliner for $9 — Lifetime License
+            Get Cliner for $9
           </a>
         </div>
 

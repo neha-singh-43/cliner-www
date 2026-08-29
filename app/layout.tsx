@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -99,6 +101,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -138,7 +143,10 @@ export default function RootLayout({
         <link rel="help" href="/llms.txt" type="text/plain" title="LLM Agent SEO Context" />
       </head>
       <body className="min-h-screen bg-[#09090b] text-[#fafafa] antialiased selection:bg-blue-600 selection:text-white flex flex-col font-sans">
+        {gtmId && <GoogleTagManager gtmId={gtmId} />}
         {children}
+        <Analytics />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );
