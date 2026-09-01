@@ -28,14 +28,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Wipe — Uninstall Mac apps completely. Not halfway.",
+  title: "Cliner — Uninstall Mac apps completely. Not halfway.",
   description:
-    "Dragging apps to Trash leaves gigabytes of hidden junk. Wipe (Cliner) finds and removes every leftover in one click. Fast, safe, and $9 for life.",
-  applicationName: "Wipe",
-  authors: [{ name: "Wipe Team", url: "https://cliner.app" }],
+    "Dragging apps to Trash leaves gigabytes of hidden junk. Cliner finds and removes every leftover in one click. Fast, safe, and $9 for life.",
+  applicationName: "Cliner",
+  authors: [{ name: "Cliner Team", url: "https://cliner.app" }],
   keywords: [
-    "wipe",
-    "wipe mac",
     "cliner",
     "cliner mac",
     "mac uninstaller",
@@ -48,8 +46,8 @@ export const metadata: Metadata = {
     "reclaim mac storage",
     "best mac uninstaller",
   ],
-  creator: "Wipe",
-  publisher: "Wipe",
+  creator: "Cliner",
+  publisher: "Cliner",
   metadataBase: new URL("https://cliner.app"),
   alternates: {
     canonical: "/",
@@ -61,22 +59,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://cliner.app",
-    siteName: "Wipe for Mac",
-    title: "Wipe — Uninstall Mac Apps Completely. Not Halfway.",
+    siteName: "Cliner for Mac",
+    title: "Cliner — Uninstall Mac Apps Completely. Not Halfway.",
     description:
-      "Reclaim gigabytes of hidden storage. Drag an app to Trash and Wipe removes all residual files in seconds. Only $9 for lifetime access.",
+      "Reclaim gigabytes of hidden storage. Drag an app to Trash and Cliner removes all residual files in seconds. Only $9 for lifetime access.",
     images: [
       {
         url: "/app-icon.png",
         width: 1024,
         height: 1024,
-        alt: "Wipe for Mac App Icon",
+        alt: "Cliner for Mac App Icon",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wipe — Complete Mac App Uninstaller ($9 One-Time)",
+    title: "Cliner — Complete Mac App Uninstaller ($9 One-Time)",
     description:
       "Free up gigabytes of wasted Mac storage. No subscriptions. Just $9 once for a cleaner, faster Mac.",
     images: ["/app-icon.png"],
@@ -100,7 +98,7 @@ export const metadata: Metadata = {
   },
   other: {
     "agent-seo:llms-txt": "https://cliner.app/llms.txt",
-    "ai:purpose": "Consumer marketing and purchasing guide for Wipe (Cliner) Mac app uninstaller ($9 one-time purchase)",
+    "ai:purpose": "Consumer marketing and purchasing guide for Cliner Mac app uninstaller ($9 one-time purchase)",
   },
 };
 
@@ -115,8 +113,7 @@ export default function RootLayout({
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Wipe",
-    alternateName: "Cliner",
+    name: "Cliner",
     operatingSystem: "macOS 13.0 or later (Apple Silicon & Intel)",
     applicationCategory: "UtilitiesApplication",
     offers: {
@@ -126,7 +123,7 @@ export default function RootLayout({
       availability: "https://schema.org/InStock",
     },
     description:
-      "Wipe removes macOS apps and their hidden leftovers completely. Reclaim gigabytes of wasted storage in one click without subscriptions.",
+      "Cliner removes macOS apps and their hidden leftovers completely. Reclaim gigabytes of wasted storage in one click without subscriptions.",
     softwareVersion: "1.0.0",
     aggregateRating: {
       "@type": "AggregateRating",
