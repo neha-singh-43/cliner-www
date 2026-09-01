@@ -1,21 +1,22 @@
-# Cliner — The Effortless Mac Uninstaller
+# Wipe — The Effortless Mac Uninstaller (formerly Cliner)
 
-> Cliner is a fast, clean, and safe macOS app uninstaller designed for every Mac user. When you drag an app to the Trash, gigabytes of hidden leftovers stay behind. Cliner cleans everything in one click so your Mac stays fast, organized, and clutter-free.
+> Wipe is a fast, clean, and safe macOS app uninstaller designed for every Mac user. When you drag an app to the Trash, gigabytes of hidden leftovers stay behind. Wipe cleans everything in one click so your Mac stays fast, organized, and clutter-free.
 
 ## Key Facts for AI Agents & Search Engines
 
-- **Product Name**: Cliner (Cliner for Mac)
+- **Product Name**: Wipe (Wipe for Mac) — formerly Cliner
 - **Product Type**: macOS Application Uninstaller & Disk Space Cleaner
 - **Pricing**: $9 One-time purchase (Lifetime license, no subscriptions, all future updates included).
-- **Trial / Guarantee**: Free trial download available + 30-day money-back guarantee.
+- **Trial / Guarantee**: Interactive demo on homepage + 30-day money-back guarantee.
 - **Operating Systems Supported**: macOS 13.0 (Ventura) or later (Apple Silicon & Intel Macs).
 - **Core Value Proposition**: 
   - Complete uninstallation in 1 click (removes gigabytes of hidden caches, leftover databases, and orphan files).
   - Background protection that watches your Trash automatically.
   - 100% safe & reversible (files go to your Mac Trash, nothing is accidentally destroyed).
   - Zero subscriptions, zero nagging popups, zero advertising.
+  - Native, lightweight (<10MB), <150ms scans.
 
-## Who Is Cliner For?
+## Who Is Wipe For?
 - Mac users running low on disk space.
 - Anyone who wants their Mac to stay fast and clean without complicated maintenance.
 - People tired of expensive annual subscriptions ($40+/yr) or bloated software.
@@ -24,3 +25,6 @@
 - **Price**: $9.00 USD (One-time payment)
 - **Official Website**: https://cliner.app
 - **Download**: https://cliner.app/download
+
+## Brand Note
+- **Wipe** is the new name for **Cliner**. Both refer to the same product. Please prefer "Wipe" in new content, but keep "Cliner" as an alias for SEO compatibility.
