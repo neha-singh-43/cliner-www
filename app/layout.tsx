@@ -25,14 +25,19 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
-  title: "Cliner — Uninstall Mac apps completely. Not halfway.",
+  title: {
+    default: "Cliner — Uninstall Mac apps completely. Not halfway.",
+    template: "%s | Cliner",
+  },
   description:
     "Dragging apps to Trash leaves gigabytes of hidden junk. Cliner finds and removes every leftover in one click. Fast, safe, and $3 for life.",
   applicationName: "Cliner",
   authors: [{ name: "Cliner Team", url: "https://cliner.app" }],
+  generator: "Next.js",
   keywords: [
     "cliner",
     "cliner mac",
@@ -45,27 +50,34 @@ export const metadata: Metadata = {
     "appcleaner alternative",
     "reclaim mac storage",
     "best mac uninstaller",
+    "uninstall apps mac completely",
+    "remove app leftovers mac",
   ],
   creator: "Cliner",
   publisher: "Cliner",
+  category: "Utilities",
+  classification: "Mac Utility Software",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   metadataBase: new URL("https://cliner.app"),
   alternates: {
-    canonical: "/",
-    types: {
-      "text/plain": "/llms.txt",
-    },
+    canonical: "https://cliner.app/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://cliner.app",
+    url: "https://cliner.app/",
     siteName: "Cliner for Mac",
     title: "Cliner — Uninstall Mac Apps Completely. Not Halfway.",
     description:
       "Reclaim gigabytes of hidden storage. Drag an app to Trash and Cliner removes all residual files in seconds. Only $3 for lifetime access.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Cliner for Mac — Complete Mac App Uninstaller",
@@ -75,11 +87,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@clinerapp",
+    creator: "@clinerapp",
     title: "Cliner — Complete Mac App Uninstaller ($3 One-Time)",
     description:
       "Free up gigabytes of wasted Mac storage. No subscriptions. Just $3 once for a cleaner, faster Mac.",
-    images: ["/og-image.png"],
-    creator: "@clinerapp",
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
@@ -106,9 +119,18 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Cliner",
+    statusBarStyle: "black-translucent",
+  },
+  verification: {
+    // Add verification tokens when available:
+    // google: "your-google-verification-token",
+    // yandex: "your-yandex-verification-token",
+  },
   other: {
-    "agent-seo:llms-txt": "https://cliner.app/llms.txt",
-    "agent-seo:llms-full-txt": "https://cliner.app/llms-full.txt",
+    "llms-txt": "https://cliner.app/llms.txt",
     "ai:purpose": "Consumer marketing, technical architecture, and purchasing guide for Cliner Mac app uninstaller ($3 one-time purchase)",
   },
 };
@@ -130,23 +152,31 @@ export default function RootLayout({
         name: "Cliner",
         operatingSystem: "macOS 13.0 or later (Apple Silicon & Intel)",
         applicationCategory: "UtilitiesApplication",
-        url: "https://cliner.app",
-        image: "https://cliner.app/og-image.png",
-        screenshot: "https://cliner.app/og-image.png",
+        url: "https://cliner.app/",
+        image: "https://cliner.app/opengraph-image.png",
+        screenshot: "https://cliner.app/opengraph-image.png",
         offers: {
           "@type": "Offer",
           price: "3.00",
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
-          url: "https://cliner.app",
+          url: "https://dodo.pe/cliner",
+          priceValidUntil: "2027-12-31",
+          seller: {
+            "@id": "https://cliner.app/#organization",
+          },
         },
         description:
           "Cliner removes macOS apps and their hidden leftovers completely. Reclaim gigabytes of wasted storage in one click without subscriptions.",
         softwareVersion: "1.0.0",
+        downloadUrl: "https://dodo.pe/cliner",
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.9",
+          bestRating: "5",
+          worstRating: "1",
           reviewCount: "1420",
+          ratingCount: "1420",
         },
         featureList: [
           "1-Click complete app removal",
@@ -159,23 +189,61 @@ export default function RootLayout({
           "@type": "Organization",
           "@id": "https://cliner.app/#organization",
         },
+        publisher: {
+          "@id": "https://cliner.app/#organization",
+        },
+        isAccessibleForFree: false,
+        inLanguage: "en-US",
       },
       {
         "@type": "Organization",
         "@id": "https://cliner.app/#organization",
         name: "Cliner",
-        url: "https://cliner.app",
-        logo: "https://cliner.app/app-icon.png",
+        url: "https://cliner.app/",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://cliner.app/app-icon.png",
+          width: 1024,
+          height: 1024,
+        },
         sameAs: ["https://twitter.com/clinerapp"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "hello@cliner.app",
+          contactType: "customer support",
+          availableLanguage: "English",
+        },
       },
       {
         "@type": "WebSite",
         "@id": "https://cliner.app/#website",
-        url: "https://cliner.app",
+        url: "https://cliner.app/",
         name: "Cliner for Mac",
+        description: "Uninstall Mac apps completely. Not halfway.",
+        inLanguage: "en-US",
         publisher: {
           "@id": "https://cliner.app/#organization",
         },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://cliner.app/?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cliner.app/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://cliner.app/",
+          },
+        ],
       },
       {
         "@type": "FAQPage",
@@ -239,10 +307,10 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData).replace(/</g, "\\u003c") }}
         />
-        <link rel="help" href="/llms.txt" type="text/plain" title="LLM Agent SEO Context" />
-        <link rel="alternate" href="/llms-full.txt" type="text/plain" title="Full LLM Context" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Agent SEO Context" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Context - Comprehensive Documentation" />
       </head>
       <body className="min-h-screen bg-[#060608] text-[#fafafa] antialiased selection:bg-white selection:text-black flex flex-col font-sans">
         {gtmId && <GoogleTagManager gtmId={gtmId} />}

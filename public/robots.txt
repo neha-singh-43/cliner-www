@@ -1,14 +1,25 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
-# Agent and LLM Crawler Directives
+# AI and LLM Crawlers — explicitly allowed (Agent SEO)
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Anthropic-AI
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: CCBot
@@ -32,7 +43,16 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-# Sitemaps & LLM Context References
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+Host: https://cliner.app
 Sitemap: https://cliner.app/sitemap.xml
 
 # LLM Agent Documentation (per llmstxt.org convention)
