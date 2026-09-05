@@ -28,6 +28,14 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://cliner.app");
+
 export const metadata: Metadata = {
   title: {
     default: "Cliner — Uninstall Mac apps completely. Not halfway.",
@@ -36,7 +44,7 @@ export const metadata: Metadata = {
   description:
     "Dragging apps to Trash leaves gigabytes of hidden junk. Cliner finds and removes every leftover in one click. Fast, safe, and $3 for life.",
   applicationName: "Cliner",
-  authors: [{ name: "Cliner Team", url: "https://cliner.app" }],
+  authors: [{ name: "Cliner Team", url: siteUrl }],
   generator: "Next.js",
   keywords: [
     "cliner",
@@ -63,14 +71,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://cliner.app"),
+  metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "https://cliner.app/",
+    canonical: `${siteUrl}/`,
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://cliner.app/",
+    url: `${siteUrl}/`,
     siteName: "Cliner for Mac",
     title: "Cliner — Uninstall Mac Apps Completely. Not Halfway.",
     description:
@@ -148,13 +156,13 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "@id": "https://cliner.app/#software",
+        "@id": `${siteUrl}/#software`,
         name: "Cliner",
         operatingSystem: "macOS 13.0 or later (Apple Silicon & Intel)",
         applicationCategory: "UtilitiesApplication",
-        url: "https://cliner.app/",
-        image: "https://cliner.app/opengraph-image.png",
-        screenshot: "https://cliner.app/opengraph-image.png",
+        url: `${siteUrl}/`,
+        image: `${siteUrl}/opengraph-image.png`,
+        screenshot: `${siteUrl}/opengraph-image.png`,
         offers: {
           "@type": "Offer",
           price: "3.00",
@@ -163,7 +171,7 @@ export default function RootLayout({
           url: "https://dodo.pe/cliner",
           priceValidUntil: "2027-12-31",
           seller: {
-            "@id": "https://cliner.app/#organization",
+            "@id": `${siteUrl}/#organization`,
           },
         },
         description:
@@ -187,22 +195,22 @@ export default function RootLayout({
         ],
         author: {
           "@type": "Organization",
-          "@id": "https://cliner.app/#organization",
+          "@id": `${siteUrl}/#organization`,
         },
         publisher: {
-          "@id": "https://cliner.app/#organization",
+          "@id": `${siteUrl}/#organization`,
         },
         isAccessibleForFree: false,
         inLanguage: "en-US",
       },
       {
         "@type": "Organization",
-        "@id": "https://cliner.app/#organization",
+        "@id": `${siteUrl}/#organization`,
         name: "Cliner",
-        url: "https://cliner.app/",
+        url: `${siteUrl}/`,
         logo: {
           "@type": "ImageObject",
-          url: "https://cliner.app/app-icon.png",
+          url: `${siteUrl}/app-icon.png`,
           width: 1024,
           height: 1024,
         },
@@ -216,38 +224,38 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://cliner.app/#website",
-        url: "https://cliner.app/",
+        "@id": `${siteUrl}/#website`,
+        url: `${siteUrl}/`,
         name: "Cliner for Mac",
         description: "Uninstall Mac apps completely. Not halfway.",
         inLanguage: "en-US",
         publisher: {
-          "@id": "https://cliner.app/#organization",
+          "@id": `${siteUrl}/#organization`,
         },
         potentialAction: {
           "@type": "SearchAction",
           target: {
             "@type": "EntryPoint",
-            urlTemplate: "https://cliner.app/?q={search_term_string}",
+            urlTemplate: `${siteUrl}/?q={search_term_string}`,
           },
           "query-input": "required name=search_term_string",
         },
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://cliner.app/#breadcrumb",
+        "@id": `${siteUrl}/#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://cliner.app/",
+            item: `${siteUrl}/`,
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://cliner.app/#faq",
+        "@id": `${siteUrl}/#faq`,
         mainEntity: [
           {
             "@type": "Question",

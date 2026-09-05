@@ -37,8 +37,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Trailing slash handling: consistent canonical without slash, but allow both
   trailingSlash: false,
-  // Disable streaming metadata for bots that need head tags immediately
-  htmlLimitedBots: /Twitterbot|Slackbot|LinkedInBot|WhatsApp|Discordbot|TelegramBot|Google-InspectionTool/i,
+  // Fully disable streaming metadata so <meta> tags are always present in the initial <head>
+  htmlLimitedBots: /.*/,
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -80,6 +80,15 @@ const nextConfig: NextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/:path*(opengraph-image|twitter-image|og-image|app-icon|apple-icon).png",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
           },
         ],
       },
