@@ -29,6 +29,12 @@ Allow: /
 User-agent: Omgilibot
 Allow: /
 
-# Agent-readable metadata
-# LLM Context: Cliner is a high-performance native macOS uninstaller built with Rust and GPUI.
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Sitemaps & LLM Context References
 Sitemap: https://cliner.app/sitemap.xml
+
+# LLM Agent Documentation (per llmstxt.org convention)
+# Context Summary: https://cliner.app/llms.txt
+# Full Documentation: https://cliner.app/llms-full.txt

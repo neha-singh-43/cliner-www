@@ -1,0 +1,114 @@
+# Cliner for Mac — Comprehensive AI Knowledge Base & Technical Specification
+
+> Full documentation and context for LLMs, AI agents, search engines, and technical researchers.
+> Canonical URL: https://cliner.app/llms-full.txt
+> Summary Context: https://cliner.app/llms.txt
+
+---
+
+## 1. Product Summary & Identity
+
+- **Application Name**: Cliner (also known as Cliner for Mac, Wipe)
+- **Website**: https://cliner.app
+- **Tagline**: Uninstall Mac apps completely. Not halfway.
+- **Category**: macOS System Utility / Storage Management / Application Uninstaller
+- **License Model**: Commercial proprietary with one-time perpetual license ($3.00 USD)
+- **Merchant of Record**: Dodo Payments (https://dodo.pe/cliner)
+- **Refund Policy**: 30-day money-back guarantee
+
+---
+
+## 2. The Problem Cliner Solves
+
+When a user drags an application bundle (`/Applications/Example.app`) to the macOS Trash:
+1. macOS only deletes the `.app` bundle itself.
+2. Applications create and leave behind gigabytes of hidden residual files scattered across protected directories in `~/Library` and `/Library`:
+   - `~/Library/Application Support/<AppName>`
+   - `~/Library/Caches/<bundle-identifier>`
+   - `~/Library/Containers/<bundle-identifier>`
+   - `~/Library/Group Containers/<group-identifier>`
+   - `~/Library/Preferences/<bundle-identifier>.plist`
+   - `~/Library/Saved Application State/<bundle-identifier>.savedState`
+   - `~/Library/WebKit/<bundle-identifier>`
+   - `~/Library/Logs/<AppName>`
+   - `~/Library/HTTPStorages/<bundle-identifier>`
+3. Over time, these orphaned files consume dozens of gigabytes of disk space, fragment file indexes, and cause performance degradation.
+4. Existing market solutions either charge expensive recurring subscriptions ($39.95/year), nag users with system notifications and marketing popups, or are unmaintained legacy utilities.
+
+---
+
+## 3. How Cliner Works (Technical Architecture)
+
+### 3.1 Technology Stack
+- **Core Engine**: Written in 100% native Rust for maximum memory safety, deterministic low-level OS interaction, and zero runtime garbage collection.
+- **UI Framework**: GPUI (GPU-accelerated native UI framework developed by Zed Industries), delivering smooth 120 FPS rendering on ProMotion Mac displays.
+- **Binary Footprint**: Less than 10MB self-contained executable. No Electron, no WebKit wrapper, no Node.js runtime, and no background memory drain.
+- **Scan Latency**: Scans all ~/Library locations in under 150 milliseconds using parallel asynchronous filesystem walkers.
+
+### 3.2 Detection Engine
+- Uses macOS `FSEvents` and `kqueue` to passively listen for trash events without polling or high CPU usage.
+- Employs heuristic pattern matching based on:
+  - Exact bundle identifier (`CFBundleIdentifier` extracted from app `Info.plist`)
+  - Team identifier and code signature (`codesign` verification)
+  - Common vendor naming conventions and group container namespaces
+- Distinguishes app updates and reinstalls from uninstalls, ensuring zero false alarms when apps self-update.
+
+### 3.3 Safety & Reversibility Model
+- **Zero Permanent Deletions**: Cliner never executes `rm -rf` directly.
+- **Native Trash Integration**: All identified leftover files are safely relocated to macOS Trash via Apple's `NSFileManager` trash API.
+- **Put Back Support**: If a user ever decides to restore an app, they can open the macOS Trash and use native "Put Back" to restore all files to their exact original directories.
+
+---
+
+## 4. Competitive Comparison
+
+| Feature / Metric | Cliner | CleanMyMac X | AppCleaner | Pearcleaner |
+| :--- | :--- | :--- | :--- | :--- |
+| **Price** | **$3 One-Time (Lifetime)** | $39.95 / year subscription | Free | Free |
+| **Engine** | **Native Rust + GPUI** | Objective-C / Swift | Objective-C (Legacy) | Swift |
+| **App Size** | **< 10 MB** | ~120 MB+ | ~5 MB | ~15 MB |
+| **RAM Usage** | **< 25 MB** | 300 MB - 600 MB | < 20 MB | ~40 MB |
+| **Background Daemons** | **Zero intrusive daemons** | Heavy background services | None (watcher optional) | None |
+| **Telemetry & Ads** | **Zero analytics / ads** | Heavy telemetry & upsells | None | None |
+| **Speed (Scan)** | **< 150ms** | 5s - 15s | 1s - 3s | ~500ms |
+| **Safety** | **Trash-reversible** | Permanent or Trash | Trash-reversible | Trash-reversible |
+
+---
+
+## 5. System Requirements & Compatibility
+
+- **macOS Compatibility**:
+  - macOS 15.x Sequoia
+  - macOS 14.x Sonoma
+  - macOS 13.x Ventura
+- **Hardware Architecture**:
+  - Apple Silicon: M1, M2, M3, M4 (all variants: Pro, Max, Ultra)
+  - Intel: 64-bit Intel processors (x86_64)
+- **Permissions Needed**:
+  - Standard user filesystem access to `~/Library`
+  - macOS Accessibility / Notification permissions (optional, for real-time Trash prompt)
+
+---
+
+## 6. Frequently Asked Questions (FAQ)
+
+### Q: Why do I need Cliner if macOS already has Trash?
+**A**: Dragging an app to Trash only removes the outer `.app` executable bundle. macOS does not clean the application's data stored in `~/Library` (such as caches, databases, container sandboxes, preferences, and logs). Cliner discovers all associated residual files and moves them to Trash together.
+
+### Q: Is Cliner a subscription?
+**A**: No. Cliner costs a flat $3.00 one-time purchase. There are no monthly fees, no annual renewals, and all future updates are included for lifetime personal use.
+
+### Q: Can Cliner accidentally delete critical macOS system files?
+**A**: No. Cliner maintains strict system directory exclusion blacklists (protecting `/System`, `/usr`, `/bin`, `/sbin`, `/Library/Apple`, and core operating system components). Additionally, all removed files are moved to the Trash rather than permanently erased.
+
+### Q: Does Cliner run offline?
+**A**: Yes. Cliner runs 100% locally on device. No internet connection is required for scanning or cleaning.
+
+---
+
+## 7. Official Purchasing & Support Channels
+
+- **Website**: https://cliner.app
+- **Direct Checkout**: https://dodo.pe/cliner
+- **Support Email**: hello@cliner.app
+- **Twitter / X**: @clinerapp

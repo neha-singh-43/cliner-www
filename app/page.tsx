@@ -97,14 +97,15 @@ export default function Home() {
    <header className="sticky top-0 z-40 backdrop-blur-xl bg-[#060608]/70 border-b border-white/[0.06]">
     <div className="max-w-[1200px] mx-auto px-6 h-[64px] flex items-center justify-between">
      <a href="#" className="flex items-center gap-3 group">
-      <div className="relative w-9 h-9 rounded-[11px] bg-white flex items-center justify-center shadow-[0_1px_12px_rgba(255,255,255,0.15)] ring-1 ring-white/20 overflow-hidden">
-       {/* Cliner mark */}
-       <div className="absolute inset-[1px] rounded-[10px] bg-gradient-to-b from-white to-zinc-100" />
-       <div className="relative flex items-center justify-center">
-        <div className="w-[18px] h-[18px] rounded-[5px] border-[1.7px] border-black flex items-center justify-center">
-         <div className="w-[8px] h-[1.5px] bg-black rounded-full" />
-        </div>
-       </div>
+      <div className="relative w-9 h-9 rounded-[10px] overflow-hidden ring-1 ring-white/15 shadow-[0_2px_12px_rgba(46,213,115,0.18)] group-hover:ring-emerald-500/40 transition-all bg-black/40">
+       <Image
+        src="/app-icon.png"
+        alt="Cliner for Mac Logo"
+        width={36}
+        height={36}
+        className="w-full h-full object-contain"
+        priority
+       />
       </div>
       <span className="flex flex-col leading-none">
        <span className="font-[700] text-[18px] tracking-[-0.03em] text-white">Cliner</span>
@@ -729,8 +730,14 @@ export default function Home() {
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-white/[0.06] to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative px-6 sm:px-12 py-12 sm:py-16 flex flex-col items-center text-center">
-       <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-black/20">
-        <Image src="/app-icon.png" alt="Cliner" width={40} height={40} className="rounded-xl" />
+       <div className="relative w-20 h-20 rounded-[22px] p-1 bg-gradient-to-b from-white/20 via-white/5 to-transparent shadow-[0_12px_36px_rgba(46,213,115,0.28)] flex items-center justify-center">
+        <Image
+         src="/app-icon.png"
+         alt="Cliner for Mac"
+         width={76}
+         height={76}
+         className="w-full h-full object-contain rounded-[18px]"
+        />
        </div>
        <h2 className="mt-6 text-[28px] sm:text-[42px] font-extrabold tracking-[-0.04em] text-white leading-[0.9] max-w-[640px]">
         Keep your Mac
@@ -755,10 +762,14 @@ export default function Home() {
      <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col gap-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
        <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-         <div className="w-4 h-4 rounded-[4px] border-[1.5px] border-black flex items-center justify-center">
-          <div className="w-[6px] h-[1.2px] bg-black rounded-full" />
-         </div>
+        <div className="w-8 h-8 rounded-[8px] overflow-hidden ring-1 ring-white/15 shadow-sm bg-black/40 flex items-center justify-center">
+         <Image
+          src="/app-icon.png"
+          alt="Cliner Logo"
+          width={32}
+          height={32}
+          className="w-full h-full object-contain"
+         />
         </div>
         <div>
          <div className="text-sm font-semibold tracking-[-0.02em] text-white leading-none">Cliner for Mac</div>

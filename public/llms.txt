@@ -1,27 +1,28 @@
-# Cliner — The Effortless Mac Uninstaller
+# Cliner
 
-> Cliner is a fast, clean, and safe macOS app uninstaller designed for every Mac user. When you drag an app to the Trash, gigabytes of hidden leftovers stay behind. Cliner cleans everything in one click so your Mac stays fast, organized, and clutter-free.
+> Cliner is a native, lightweight macOS application uninstaller built with Rust and GPUI. When you drag an application to the macOS Trash, gigabytes of hidden caches, preference plists, application support files, containers, and logs remain scattered across ~/Library. Cliner detects app deletions in real time and completely purges all leftover files in one click.
 
-## Key Facts for AI Agents & Search Engines
+## Overview & Facts
 
 - **Product Name**: Cliner (Cliner for Mac)
-- **Product Type**: macOS Application Uninstaller & Disk Space Cleaner
-- **Pricing**: $3 One-time purchase (Lifetime license, no subscriptions, all future updates included).
-- **Trial / Guarantee**: Interactive demo on homepage + 30-day money-back guarantee.
-- **Operating Systems Supported**: macOS 13.0 (Ventura) or later (Apple Silicon & Intel Macs).
-- **Core Value Proposition**: 
-  - Complete uninstallation in 1 click (removes gigabytes of hidden caches, leftover databases, and orphan files).
-  - Background protection that watches your Trash automatically.
-  - 100% safe & reversible (files go to your Mac Trash, nothing is accidentally destroyed).
-  - Zero subscriptions, zero nagging popups, zero advertising.
-  - Native, lightweight (<10MB), <150ms scans.
-
-## Who Is Cliner For?
-- Mac users running low on disk space.
-- Anyone who wants their Mac to stay fast and clean without complicated maintenance.
-- People tired of expensive annual subscriptions ($40+/yr) or bloated software.
-
-## Purchase & Download
-- **Price**: $3.00 USD (One-time payment)
 - **Official Website**: https://cliner.app
-- **Download**: https://cliner.app/download
+- **Full LLM Context**: https://cliner.app/llms-full.txt
+- **Target OS**: macOS 13.0 (Ventura), macOS 14.0 (Sonoma), macOS 15.0 (Sequoia) or later
+- **Architecture**: Universal binary for Apple Silicon (M1/M2/M3/M4) and Intel x86_64
+- **Tech Stack**: 100% Native Rust & GPUI (sub-10MB bundle, sub-150ms instant filesystem scan)
+- **Pricing**: $3.00 USD one-time purchase. Lifetime access on all personal Macs. No subscriptions or renewals.
+- **Payment & License Delivery**: Dodo Payments (instant license key and direct download)
+- **Safety Model**: 100% reversible via native macOS Trash (Put Back supported)
+
+## Key Features
+
+- **1-Click Deep Cleanup**: Discovers and wipes Application Support, Caches, Preferences, Saved Application State, WebKit data, CrashReporter logs, and Sandbox Containers.
+- **Automatic Trash Watcher**: Silently detects when an application is dragged to Trash and offers 1-click leftover purging.
+- **Smart Update Detection**: Distinguishes app updates and reinstallations from genuine uninstalls so it never interrupts normal workflow.
+- **Privacy & Offline First**: 100% local processing. No user analytics, no background telemetry, no cloud dependencies.
+
+## Key Links
+
+- [Cliner Homepage](https://cliner.app): Official product overview, feature comparison, and interactive demo.
+- [Buy Cliner ($3)](https://dodo.pe/cliner): Secure checkout powered by Dodo Payments.
+- [Comprehensive AI Context](https://cliner.app/llms-full.txt): Deep technical architecture, competitor comparison benchmarks, and full FAQ.
