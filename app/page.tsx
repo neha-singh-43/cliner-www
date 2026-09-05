@@ -20,7 +20,7 @@ export default function Home() {
    role: "Product Designer",
    initials: "MS",
    comment:
-    "I thought deleting an app was as simple as dragging it to Trash. Cliner freed 34 GB of leftover caches from apps I'd deleted months ago. Best $9 I've ever spent.",
+    "I thought deleting an app was as simple as dragging it to Trash. Cliner freed 34 GB of leftover caches from apps I'd deleted months ago. Best $3 I've ever spent.",
    rating: 5,
   },
   {
@@ -47,8 +47,8 @@ export default function Home() {
    a: "When you drag an app to Trash, macOS only deletes the .app bundle. Hidden caches, containers, preferences, logs and old updates remain scattered across ~/Library — often gigabytes worth. Cliner finds every trace and removes it with one click.",
   },
   {
-   q: "Is the $9 a subscription?",
-   a: "No. It's a one-time payment. Pay $9 once and you own Cliner for life on all your personal Macs, with all future updates included. No monthly fees, no renewals.",
+   q: "Is the $3 a subscription?",
+   a: "No. It's a one-time payment. Pay $3 once and you own Cliner for life on all your personal Macs, with all future updates included. No monthly fees, no renewals.",
   },
   {
    q: "How does checkout and delivery work?",
@@ -84,8 +84,8 @@ export default function Home() {
       Early Access
      </span>
      <span className="text-zinc-300">
-      Launch price: <strong className="text-white font-semibold">$9 lifetime</strong>
-      <span className="text-zinc-500 hidden sm:inline"> — normally $29 • No subscription, ever.</span>
+      Launch price: <strong className="text-white font-semibold">$3 lifetime</strong>
+      <span className="text-zinc-500 hidden sm:inline"> — normally $5 • No subscription, ever.</span>
      </span>
      <a href="#pricing" className="ml-1 hidden sm:inline-flex text-white underline decoration-white/30 underline-offset-4 hover:decoration-white/60 transition-colors text-xs font-medium">
       Get Cliner →
@@ -139,7 +139,7 @@ export default function Home() {
        rel="noopener noreferrer"
        className="hidden sm:inline-flex items-center gap-2 px-4 h-9 rounded-full bg-white text-black text-[13px] font-semibold tracking-[-0.01em] hover:bg-zinc-100 transition-colors shadow-[0_1px_10px_rgba(255,255,255,0.15)] active:scale-[0.98]"
       >
-       Get Cliner — $9
+       Get Cliner — $3
       </a>
       <a
        href={CHECKOUT_URL}
@@ -147,7 +147,7 @@ export default function Home() {
        rel="noopener noreferrer"
        className="sm:hidden inline-flex items-center px-4 h-9 rounded-full bg-white text-black text-[13px] font-semibold"
       >
-       $9
+       $3
       </a>
       <button
        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -172,7 +172,7 @@ export default function Home() {
        <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-zinc-300 py-1">Pricing</a>
        <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-zinc-300 py-1">FAQ</a>
        <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="mt-2 w-full h-11 rounded-full bg-white text-black font-semibold flex items-center justify-center">
-        Get Cliner — $9 Lifetime
+        Get Cliner — $3 Lifetime
        </a>
       </nav>
      </div>
@@ -216,7 +216,7 @@ export default function Home() {
          rel="noopener noreferrer"
          className="group inline-flex items-center justify-center gap-3 h-[48px] px-7 rounded-full bg-white text-black font-semibold text-[15px] tracking-[-0.01em] shadow-[0_8px_30px_rgba(255,255,255,0.12)] hover:bg-zinc-100 transition-all active:scale-[0.98] w-full sm:w-auto"
         >
-         <span>Get Cliner — $9</span>
+         <span>Get Cliner — $3</span>
          <span className="px-2 py-1 rounded-full bg-black text-white text-[10px] font-bold tracking-widest uppercase leading-none">
           Lifetime
          </span>
@@ -239,7 +239,7 @@ export default function Home() {
        <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-[11.5px] leading-none">
         <span className="inline-flex items-center gap-1.5 text-zinc-400">
          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-emerald-500"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-         One-time $9
+         One-time $3
         </span>
         <span className="w-px h-3 bg-white/10" />
         <span className="inline-flex items-center gap-1.5 text-zinc-400">
@@ -512,8 +512,8 @@ export default function Home() {
         </div>
        </div>
        <div className="flex items-baseline gap-2 shrink-0">
-        <span className="text-[28px] font-extrabold tracking-[-0.03em] text-black">$9</span>
-        <span className="text-sm text-zinc-500 line-through">$29</span>
+        <span className="text-[28px] font-extrabold tracking-[-0.03em] text-black">$3</span>
+        <span className="text-sm text-zinc-500 line-through">$5</span>
         <span className="px-2 py-1 rounded-full bg-black text-white text-[11px] font-bold tracking-wide">ONE-TIME</span>
        </div>
       </div>
@@ -561,7 +561,7 @@ export default function Home() {
        <div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] border-t border-white/[0.06] bg-black/20">
         <div className="px-6 py-4 text-xs text-zinc-500">Price</div>
         <div className="px-4 py-4 text-center text-xs font-mono text-zinc-400">Free</div>
-        <div className="px-4 py-4 text-center bg-white text-black font-bold">$9 once</div>
+        <div className="px-4 py-4 text-center bg-white text-black font-bold">$3 once</div>
         <div className="px-4 py-4 text-center text-xs font-mono text-zinc-400">$40/yr</div>
        </div>
       </div>
@@ -625,9 +625,9 @@ export default function Home() {
        </div>
 
        <div className="mt-6 flex items-baseline gap-3">
-        <span className="text-[52px] sm:text-[56px] font-extrabold tracking-[-0.04em] text-black leading-none">$9</span>
-        <span className="text-[16px] text-zinc-500 line-through">$29</span>
-        <span className="px-2 py-1 rounded-full bg-emerald-500 text-black text-xs font-bold">SAVE 68%</span>
+        <span className="text-[52px] sm:text-[56px] font-extrabold tracking-[-0.04em] text-black leading-none">$3</span>
+        <span className="text-[16px] text-zinc-500 line-through">$5</span>
+        <span className="px-2 py-1 rounded-full bg-emerald-500 text-black text-xs font-bold">SAVE 40%</span>
        </div>
        <p className="text-xs text-zinc-500 mt-1">One-time payment • All future updates included</p>
 
@@ -655,7 +655,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="mt-6 w-full h-[52px] rounded-full bg-black hover:bg-zinc-900 text-white font-semibold text-[15px] flex items-center justify-center gap-2 transition-colors active:scale-[0.99]"
        >
-        Get Cliner Now — $9
+        Get Cliner Now — $3
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
        </a>
        <p className="mt-3 text-center text-[11px] text-zinc-500 flex items-center justify-center gap-1.5">
@@ -744,7 +744,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="mt-8 inline-flex items-center gap-2 h-[48px] px-8 rounded-full bg-white text-black font-semibold text-[15px] shadow-[0_8px_30px_rgba(255,255,255,0.15)] hover:bg-zinc-100 transition-colors active:scale-[0.98]"
        >
-        Get Cliner for $9
+        Get Cliner for $3
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
        </a>
        <div className="mt-4 text-xs text-zinc-500">30-day guarantee • Instant delivery • Works offline</div>

@@ -343,7 +343,7 @@ export default function InteractiveAppDemo() {
           href="#pricing"
           className="w-full h-9 rounded-full border border-white/10 bg-white/[0.04] text-zinc-300 text-xs font-medium grid place-items-center hover:bg-white/[0.08] hover:text-white transition-colors"
          >
-          Get Cliner — $9
+          Get Cliner — $3
          </a>
         </div>
        </div>

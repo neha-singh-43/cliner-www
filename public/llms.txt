@@ -6,7 +6,7 @@
 
 - **Product Name**: Cliner (Cliner for Mac)
 - **Product Type**: macOS Application Uninstaller & Disk Space Cleaner
-- **Pricing**: $9 One-time purchase (Lifetime license, no subscriptions, all future updates included).
+- **Pricing**: $3 One-time purchase (Lifetime license, no subscriptions, all future updates included).
 - **Trial / Guarantee**: Interactive demo on homepage + 30-day money-back guarantee.
 - **Operating Systems Supported**: macOS 13.0 (Ventura) or later (Apple Silicon & Intel Macs).
 - **Core Value Proposition**: 
@@ -22,6 +22,6 @@
 - People tired of expensive annual subscriptions ($40+/yr) or bloated software.
 
 ## Purchase & Download
-- **Price**: $9.00 USD (One-time payment)
+- **Price**: $3.00 USD (One-time payment)
 - **Official Website**: https://cliner.app
 - **Download**: https://cliner.app/download

@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Cliner — Uninstall Mac apps completely. Not halfway.",
   description:
-    "Dragging apps to Trash leaves gigabytes of hidden junk. Cliner finds and removes every leftover in one click. Fast, safe, and $9 for life.",
+    "Dragging apps to Trash leaves gigabytes of hidden junk. Cliner finds and removes every leftover in one click. Fast, safe, and $3 for life.",
   applicationName: "Cliner",
   authors: [{ name: "Cliner Team", url: "https://cliner.app" }],
   keywords: [
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "Cliner for Mac",
     title: "Cliner — Uninstall Mac Apps Completely. Not Halfway.",
     description:
-      "Reclaim gigabytes of hidden storage. Drag an app to Trash and Cliner removes all residual files in seconds. Only $9 for lifetime access.",
+      "Reclaim gigabytes of hidden storage. Drag an app to Trash and Cliner removes all residual files in seconds. Only $3 for lifetime access.",
     images: [
       {
         url: "/app-icon.png",
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cliner — Complete Mac App Uninstaller ($9 One-Time)",
+    title: "Cliner — Complete Mac App Uninstaller ($3 One-Time)",
     description:
-      "Free up gigabytes of wasted Mac storage. No subscriptions. Just $9 once for a cleaner, faster Mac.",
+      "Free up gigabytes of wasted Mac storage. No subscriptions. Just $3 once for a cleaner, faster Mac.",
     images: ["/app-icon.png"],
     creator: "@clinerapp",
   },
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
   },
   other: {
     "agent-seo:llms-txt": "https://cliner.app/llms.txt",
-    "ai:purpose": "Consumer marketing and purchasing guide for Cliner Mac app uninstaller ($9 one-time purchase)",
+    "ai:purpose": "Consumer marketing and purchasing guide for Cliner Mac app uninstaller ($3 one-time purchase)",
   },
 };
 
