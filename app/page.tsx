@@ -97,7 +97,7 @@ export default function Home() {
    <header className="sticky top-0 z-40 backdrop-blur-xl bg-[#060608]/70 border-b border-white/[0.06]">
     <div className="max-w-[1200px] mx-auto px-6 h-[64px] flex items-center justify-between">
      <a href="#" className="flex items-center gap-3 group">
-      <div className="relative w-9 h-9 rounded-[10px] overflow-hidden ring-1 ring-white/15 shadow-[0_2px_12px_rgba(46,213,115,0.18)] group-hover:ring-emerald-500/40 transition-all bg-black/40">
+      <div className="relative w-9 h-9 rounded-[10px] overflow-hidden ring-1 ring-white/15 shadow-[0_2px_12px_rgba(59,130,246,0.22)] group-hover:ring-blue-500/40 transition-all bg-black/40">
        <Image
         src="/app-icon.png"
         alt="Cliner for Mac Logo"
@@ -105,6 +105,7 @@ export default function Home() {
         height={36}
         className="w-full h-full object-contain"
         priority
+        unoptimized
        />
       </div>
       <span className="flex flex-col leading-none">
@@ -730,13 +731,14 @@ export default function Home() {
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-white/[0.06] to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative px-6 sm:px-12 py-12 sm:py-16 flex flex-col items-center text-center">
-       <div className="relative w-20 h-20 rounded-[22px] p-1 bg-gradient-to-b from-white/20 via-white/5 to-transparent shadow-[0_12px_36px_rgba(46,213,115,0.28)] flex items-center justify-center">
+       <div className="relative w-20 h-20 rounded-[22px] p-1 bg-gradient-to-b from-white/20 via-white/5 to-transparent shadow-[0_12px_36px_rgba(59,130,246,0.32)] flex items-center justify-center">
         <Image
          src="/app-icon.png"
          alt="Cliner for Mac"
          width={76}
          height={76}
          className="w-full h-full object-contain rounded-[18px]"
+         unoptimized
         />
        </div>
        <h2 className="mt-6 text-[28px] sm:text-[42px] font-extrabold tracking-[-0.04em] text-white leading-[0.9] max-w-[640px]">
@@ -769,6 +771,7 @@ export default function Home() {
           width={32}
           height={32}
           className="w-full h-full object-contain"
+          unoptimized
          />
         </div>
         <div>

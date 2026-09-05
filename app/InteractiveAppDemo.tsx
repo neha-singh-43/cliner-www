@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export interface DemoAppItem {
  id: string;
@@ -186,10 +187,8 @@ export default function InteractiveAppDemo() {
        <span className="w-3 h-3 rounded-full bg-[#28c840] border border-black/10 shadow-sm" />
       </div>
       <div className="flex items-center gap-2 text-[12px] font-semibold tracking-[-0.01em] text-zinc-200">
-       <div className="w-5 h-5 rounded-md bg-white flex items-center justify-center">
-        <div className="w-3 h-3 rounded-[3px] border-[1.2px] border-black flex items-center justify-center">
-         <div className="w-[5px] h-[1px] bg-black rounded-full" />
-        </div>
+       <div className="w-5 h-5 rounded-[5px] overflow-hidden bg-black/40 ring-1 ring-white/10 flex items-center justify-center">
+        <Image src="/app-icon.png" alt="Cliner" width={20} height={20} className="w-full h-full object-contain" unoptimized />
        </div>
        <span>Cliner</span>
        <span className="hidden sm:inline text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-white text-black leading-none">macOS</span>
