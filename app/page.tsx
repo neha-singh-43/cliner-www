@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import InteractiveAppDemo from "./InteractiveAppDemo";
 
-const POLAR_CHECKOUT_URL =
- process.env.NEXT_PUBLIC_POLAR_CHECKOUT_URL || "https://buy.polar.sh/polar_cl_example";
+const CHECKOUT_URL =
+ process.env.NEXT_PUBLIC_CHECKOUT_URL ||
+ process.env.NEXT_PUBLIC_POLAR_CHECKOUT_URL ||
+ "https://dodo.pe/cliner";
 
 export default function Home() {
  const [activeStep, setActiveStep] = useState<number>(1);
@@ -50,7 +52,7 @@ export default function Home() {
   },
   {
    q: "How does checkout and delivery work?",
-   a: "Payments are handled securely via Polar.sh. Right after purchase you receive an instant download link and license key by email. Activate and you're done.",
+   a: "Payments are handled securely via Dodo Payments. Right after purchase you receive an instant download link and license key by email. Activate and you're done.",
   },
   {
    q: "What if I delete something by mistake?",
@@ -132,7 +134,7 @@ export default function Home() {
 
      <div className="flex items-center gap-2.5">
       <a
-       href={POLAR_CHECKOUT_URL}
+       href={CHECKOUT_URL}
        target="_blank"
        rel="noopener noreferrer"
        className="hidden sm:inline-flex items-center gap-2 px-4 h-9 rounded-full bg-white text-black text-[13px] font-semibold tracking-[-0.01em] hover:bg-zinc-100 transition-colors shadow-[0_1px_10px_rgba(255,255,255,0.15)] active:scale-[0.98]"
@@ -140,7 +142,7 @@ export default function Home() {
        Get Cliner — $9
       </a>
       <a
-       href={POLAR_CHECKOUT_URL}
+       href={CHECKOUT_URL}
        target="_blank"
        rel="noopener noreferrer"
        className="sm:hidden inline-flex items-center px-4 h-9 rounded-full bg-white text-black text-[13px] font-semibold"
@@ -169,7 +171,7 @@ export default function Home() {
        <a href="#compare" onClick={() => setMobileMenuOpen(false)} className="text-zinc-300 py-1">Compare</a>
        <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-zinc-300 py-1">Pricing</a>
        <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-zinc-300 py-1">FAQ</a>
-       <a href={POLAR_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="mt-2 w-full h-11 rounded-full bg-white text-black font-semibold flex items-center justify-center">
+       <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="mt-2 w-full h-11 rounded-full bg-white text-black font-semibold flex items-center justify-center">
         Get Cliner — $9 Lifetime
        </a>
       </nav>
@@ -209,7 +211,7 @@ export default function Home() {
 
        <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
         <a
-         href={POLAR_CHECKOUT_URL}
+         href={CHECKOUT_URL}
          target="_blank"
          rel="noopener noreferrer"
          className="group inline-flex items-center justify-center gap-3 h-[48px] px-7 rounded-full bg-white text-black font-semibold text-[15px] tracking-[-0.01em] shadow-[0_8px_30px_rgba(255,255,255,0.12)] hover:bg-zinc-100 transition-all active:scale-[0.98] w-full sm:w-auto"
@@ -648,7 +650,7 @@ export default function Home() {
        </div>
 
        <a
-        href={POLAR_CHECKOUT_URL}
+        href={CHECKOUT_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 w-full h-[52px] rounded-full bg-black hover:bg-zinc-900 text-white font-semibold text-[15px] flex items-center justify-center gap-2 transition-colors active:scale-[0.99]"
@@ -657,7 +659,7 @@ export default function Home() {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
        </a>
        <p className="mt-3 text-center text-[11px] text-zinc-500 flex items-center justify-center gap-1.5">
-        <span>🔒</span> Powered by <strong className="text-zinc-700 font-semibold">Polar.sh</strong> • Instant license delivery • Email support
+        <span>🔒</span> Powered by <strong className="text-zinc-700 font-semibold">Dodo Payments</strong> • Instant license delivery • Email support
        </p>
 
        <div className="mt-6 flex items-center justify-center gap-6 text-[11px] font-mono text-zinc-500">
@@ -737,7 +739,7 @@ export default function Home() {
        </h2>
        <p className="mt-3 text-[15px] leading-[1.6] text-zinc-400 max-w-[520px]">Join 1,400+ Mac users who never worry about leftover junk again. One click, done.</p>
        <a
-        href={POLAR_CHECKOUT_URL}
+        href={CHECKOUT_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 inline-flex items-center gap-2 h-[48px] px-8 rounded-full bg-white text-black font-semibold text-[15px] shadow-[0_8px_30px_rgba(255,255,255,0.15)] hover:bg-zinc-100 transition-colors active:scale-[0.98]"
@@ -771,7 +773,7 @@ export default function Home() {
        </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 text-[11px] leading-relaxed text-zinc-600 max-w-[900px]">
-       <p>Cliner is an independent macOS utility. Not affiliated with Apple Inc. macOS is a trademark of Apple Inc. Payments and license delivery via Polar.sh.</p>
+       <p>Cliner is an independent macOS utility. Not affiliated with Apple Inc. macOS is a trademark of Apple Inc. Payments and license delivery via Dodo Payments.</p>
       </div>
      </div>
     </div>
